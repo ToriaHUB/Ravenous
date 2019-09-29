@@ -1,18 +1,18 @@
 import React from 'react';
 import './App.css';
+import {BusinessList} from "../BusinessList/BusinessList";
+import {SearchBar} from "../SearchBar/SearchBar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-
-        <p>
-          Happy hacking!!!
-        </p>
-
-      </header>
-    </div>
-  );
+export class App extends React.Component {
+    render() {
+        return(
+            <div className="App">
+                <h1>ravenous</h1>
+                <SearchBar/>
+                <BusinessList />
+            </div>
+        );
+    }
 }
 
-export default App;
+
