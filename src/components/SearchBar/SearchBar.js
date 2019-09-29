@@ -6,7 +6,11 @@ import './SearchBar.css';
      'Most Reviewed':'review_count',
  };
 
- export class SearchBar extends React.Component{
+/**
+ * A SearchBar component that will be used in the future to search for business
+ */
+
+export class SearchBar extends React.Component{
       renderSortByOptions(){
         return Object.keys(sortByOptions).map((sortByOption)=>{
             let sortByOptionValue = sortByOptions[sortByOption];

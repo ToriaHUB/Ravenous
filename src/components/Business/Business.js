@@ -14,6 +14,10 @@ const business = {
     reviewCount: 90
 };
 
+/**
+A Business component simulates a single business
+ **/
+
 export class Business extends React.Component{
     render(){
         return(
