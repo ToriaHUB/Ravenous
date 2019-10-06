@@ -11,7 +11,7 @@ export class SearchBar extends React.Component{
       renderSortByOptions(){
         return Object.keys(this.sortByOptions).map((sortByOption)=>{
             let sortByOptionValue = this.sortByOptions[sortByOption];
-            return <li key={sortByOptionValue}> {sortByOption} </li>;
+            return <li key={sortByOptionValue} className={this.getSortByClass(sortByOptionValue)} > {sortByOption} </li>;
         });
      }
      constructor(props){
@@ -27,15 +27,15 @@ export class SearchBar extends React.Component{
              'Most Reviewed':'review_count',
             };
       }
-    getSortByClass(sortByOption){
-        if (this.state.sortBy === sortByOption){
+    getSortByClass(sortBy){
+        if (this.state.sortBy === sortBy){
             return 'active'
         }else{
             return ''
         }
     }
-    handleSortByChange(sortByOption){
-          this.setState({sortBy: sortByOption});
+    handleSortByChange(sortBy){
+          this.setState({sortBy: sortBy});
     }
      render(){
           return(
