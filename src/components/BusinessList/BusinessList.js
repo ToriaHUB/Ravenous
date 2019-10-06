@@ -8,15 +8,15 @@ import {Business} from '../Business/Business';
 export class BusinessList extends React.Component{
     render(){
         return(
-            <div className="BusinessList">
+            <div className="BusinessList" >
                 {
-                    this.props.businesses.map((business)=>{
+                    this.props.businesses.map((business,index)=>{
                         return (
-                            <Business business={business}/>
+                            <Business business={business} key={index}/>
                         )
                     })
                 }
-                
+
             </div>
         );
     }

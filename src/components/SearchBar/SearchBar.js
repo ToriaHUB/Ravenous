@@ -1,18 +1,13 @@
 import React from 'react';
 import './SearchBar.css';
 
-
-/**
- * A SearchBar component that will be used in the future to search for business
- */
-
 export class SearchBar extends React.Component{
 
       renderSortByOptions(){
         return Object.keys(this.sortByOptions).map((sortByOption)=>{
             let sortByOptionValue = this.sortByOptions[sortByOption];
             return <li key={sortByOptionValue} className={this.getSortByClass(sortByOptionValue)}
-                       onClick={this.handleSortByChange.bind(this,sortByOptionValue)} > {sortByOption} </li>;
+                       onClick={this.handleSortByChange.bind(this,sortByOptionValue)}> {sortByOption} </li>;
         });
      }
      constructor(props){
@@ -37,6 +32,17 @@ export class SearchBar extends React.Component{
     }
     handleSortByChange(sortBy){
           this.setState({sortBy: sortBy});
+
+    }
+    handleTermChange(event){
+this.setState({
+    term: event.target.value
+})
+    }
+    handleLocationChange(event){
+     this.setState({
+    location: event.target.value
+     })
     }
      render(){
           return(
@@ -47,7 +53,7 @@ export class SearchBar extends React.Component{
                       </ul>
                   </div>
                   <div className="SearchBar-fields">
-                      <input placeholder="Search Businesses"/>
+                      <input placeholder="Search Businesses" />
                       <input placeholder="Where?"/>
                   </div>
                   <div className="SearchBar-submit">
