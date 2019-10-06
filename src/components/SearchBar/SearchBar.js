@@ -34,6 +34,9 @@ export class SearchBar extends React.Component{
             return ''
         }
     }
+    handleSortByChange(sortByOption){
+          this.setState({sortBy: sortByOption});
+    }
      render(){
           return(
               <div className="SearchBar">
