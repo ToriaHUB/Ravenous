@@ -14,17 +14,15 @@ export const Yelp = {
       })
       .then(jsonResponse => {
         if (jsonResponse.businesses) {
-        } else {
           return jsonResponse.businesses.map(business => {
             console.log(business);
-
             return {
               id: business.id,
               imageSrc: business.image_url,
               name: business.name,
-              address: business.address.location,
+              address: business.location.address1,
               city: business.location.city,
-              state: business.location.state,
+              state: business.location.country,
               zipCode: business.location.zipCode,
               category: business.categories[0].title,
               rating: business.rating,
