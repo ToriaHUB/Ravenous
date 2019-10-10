@@ -15,7 +15,7 @@ export const Yelp = {
       .then(jsonResponse => {
         if (jsonResponse.businesses) {
           return jsonResponse.businesses.map(business => {
-            console.log(business);
+
             return {
               id: business.id,
               imageSrc: business.image_url,
@@ -28,6 +28,8 @@ export const Yelp = {
               rating: business.rating,
               reviewCount: business.review_count,
               url: business.url,
+              lat:business.coordinates.latitude,
+              lng:business.coordinates.longitude,
             };
           });
         }
