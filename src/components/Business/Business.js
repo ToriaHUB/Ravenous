@@ -1,6 +1,6 @@
 import React from 'react';
 import './Business.css';
-import { Link } from "react-router-dom"
+import { NavLink} from "react-router-dom"
 
 
 
@@ -16,9 +16,6 @@ export class Business extends React.Component{
     handlerOnClick(){
        this.openBusinessWebpage(this.props.business.url)
     }
-    // handlerOnClickGoogleMap(){
-    //     console.log('Im google map')
-    // }
 
     render(){
         const {business} = this.props;
@@ -29,7 +26,7 @@ export class Business extends React.Component{
                 </div>
                 <h2>{business.name}</h2>
                 <div className="Business-information" >
-                    <Link to={{
+                    <NavLink to={{
                             pathname:"/target-map",
                             state:{
                                 lat:business.lat,
@@ -42,7 +39,7 @@ export class Business extends React.Component{
                         <p>{business.city}</p>
                         <p>{business.state}{business.zipCode}</p>
                     </div>
-                    </Link>
+                    </NavLink>
                     <div className="Business-reviews">
                         <h3>{business.category}</h3>
                         <h3 className="rating">{business.rating} stars</h3>
