@@ -3,10 +3,12 @@ import "./App.css";
 import { BusinessList } from "../BusinessList/BusinessList";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { Yelp } from "../../util/Yelp";
-import { Router, Route } from "react-router-dom"
+import { Router, Route } from "react-router-dom";
+
 
 import {createBrowserHistory} from "history";
 import {TargetPlaceMap} from "../Map/TargetPlaceMap";
+
 
 
 export const history = createBrowserHistory();
@@ -36,6 +38,7 @@ export class App extends React.Component {
         <SearchBar search={this.searchYelp} />
         <BusinessList businesses={this.state.businesses} />
         </Route>
+
             <Route path="/target-map" exact={true} render={props=> <TargetPlaceMap {...props}
                                                                                    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAP_GOOGLE_API_KEY}&language=en&v=3.exp&libraries=geometry,drawing,places`}
                                                                                    loadingElement={<div style={{ height: `100%` }} />}

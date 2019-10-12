@@ -6,13 +6,15 @@ import { Business } from "../Business/Business";
  * A BusinessList component that simulates a list of single businesses
  */
 export class BusinessList extends React.Component {
-  render() {
+    render() {
+    const businesses = this.props.businesses || [] ;
     return (
       <div className="BusinessList">
-        {this.props.businesses.map(business => {
+        {businesses.map(business => {
           return <Business business={business} key={business.id} />;
         })}
       </div>
+
     );
   }
 }
